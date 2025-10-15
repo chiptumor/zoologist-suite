@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="entry">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="artists">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="artist" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="name" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="sources">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="source" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="platform" use="required" />
+									<xs:attribute name="href" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="alternates">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="alt" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="id" type="xs:integer" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="pfp">
+					<xs:complexType>
+						<xs:attribute name="path" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="date">
+					<xs:complexType>
+						<xs:attribute name="value" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="captions">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="caption" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="from" use="required" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="note" type="xs:string" />
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:integer" use="required" />
+			<xs:attribute name="honor" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
