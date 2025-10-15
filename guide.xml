@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ?xml-model href="schema/entry.xsd"? -->
-<entry id="123" honor=""> <!-- honor attribute not present when false -->
-	<origin href="https://twimg.com/..."/>
+<entry id="123" honor="">
+    <!-- Root element of the XML.
+        [id="<integer>"] Numeric ID of the post.
+        [honor] Whether this post represents an image made for me.
+        - This attribute is to only be applied by me. 
+    -->
+    
+	<origin href="https://"/>
+	<!-- URL of the image of choice to save.
+	    - Prefer higher-quality files, and only shrink for storage reasons!
+	    If unsure, check the difference between two images.
+	-->
 
 	<artists>
 		<artist name="username"/>
